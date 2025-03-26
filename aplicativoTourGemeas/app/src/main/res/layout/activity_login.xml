@@ -7,46 +7,49 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/editUsuario"
-        android:layout_width="340dp"
-        android:layout_height="67dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="244dp" />
-
-    <TextView
-        android:id="@+id/textView"
+    <LinearLayout
+        android:id="@+id/gridLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Senha"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="365dp" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
-    <EditText
-        android:id="@+id/editSenha"
-        android:layout_width="335dp"
-        android:layout_height="54dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="393dp" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuário" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="501dp" />
+        <EditText
+            android:id="@+id/editUsuario"
+            android:layout_width="340dp"
+            android:layout_height="67dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Usuário"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="218dp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Senha" />
+
+        <EditText
+            android:id="@+id/editSenha"
+            android:layout_width="335dp"
+            android:layout_height="54dp"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
