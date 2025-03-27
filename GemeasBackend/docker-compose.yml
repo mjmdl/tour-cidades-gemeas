@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  gemeas_postgres:
+    container_name: gemeas_postgres
+    build: .
+    restart: no
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
+      - ./src/main/resources/db/migration/v1_init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - ${PG_PORT}:5432
+    environment:
+      POSTGRES_USER: ${PG_USERNAME}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DATABASE}
