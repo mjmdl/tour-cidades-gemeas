@@ -8,16 +8,52 @@
     tools:context=".TelaEnigmas">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:id="@+id/grdPrincipal"
+        android:layout_width="410dp"
+        android:layout_height="739dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView3"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="681dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enigmas" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tela Enigmas" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnMaps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mapa" />
+
+            <Button
+                android:id="@+id/btnEnigmas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enigma" />
+
+            <Button
+                android:id="@+id/btnPerfil"
+                android:layout_width="88dp"
+                android:layout_height="wrap_content"
+                android:text="Perfil" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

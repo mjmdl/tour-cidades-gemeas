@@ -1,5 +1,6 @@
 package com.example.aplicativotourgemeas
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,5 +20,19 @@ class TelaEnigmas : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(telaEnigmasAct.root)
 
+        telaEnigmasAct.btnPerfil.setOnClickListener() {
+            val intent = Intent(this, TelaPerfil::class.java)
+            startActivity(intent)
+        }
+
+        telaEnigmasAct.btnMaps.setOnClickListener() {
+            val intent = Intent(this, TelaMapa::class.java)
+            startActivity(intent)
+        }
+
+        telaEnigmasAct.btnEnigmas.setOnClickListener() {
+            val intent = Intent(this, TelaEnigmas::class.java)
+            startActivity(intent)
+        }
     }
 }
