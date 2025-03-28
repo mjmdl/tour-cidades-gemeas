@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(IllegalArgumentException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
-	public String handleInvalidArgument(IllegalArgumentException illegalArgument)
+	public String handleIllegalArgument(IllegalArgumentException illegalArgument)
 	{
 		return illegalArgument.getMessage();
 	}

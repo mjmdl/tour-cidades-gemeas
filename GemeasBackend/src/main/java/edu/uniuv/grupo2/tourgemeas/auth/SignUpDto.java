@@ -9,7 +9,6 @@ import lombok.Getter;
 
 public class SignUpDto {
 	@Getter
-	@AllArgsConstructor
 	public static class Req {
 		public static final int NAME_MIN = 3;
 		public static final int NAME_MAX = 255;

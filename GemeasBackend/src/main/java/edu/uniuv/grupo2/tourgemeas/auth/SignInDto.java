@@ -6,7 +6,6 @@ import lombok.Getter;
 
 public class SignInDto {
 	@Getter
-	@AllArgsConstructor
 	public static class Req {
 		@NotBlank
 		private String username;
