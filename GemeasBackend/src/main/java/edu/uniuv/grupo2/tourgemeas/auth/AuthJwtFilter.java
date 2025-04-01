@@ -42,8 +42,6 @@ public class AuthJwtFilter extends OncePerRequestFilter {
 		} catch (Exception exception) {
 			handlerExceptionResolver.resolveException(request, response, null, exception);
 		}
-
-		throw new UnsupportedOperationException("Unimplemented method 'doFilterInternal'");
 	}
 
 	private void spawnAuthenticationToken(String authorization, HttpServletRequest request)
