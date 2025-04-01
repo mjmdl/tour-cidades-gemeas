@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/gradle
+/app/.idea
+/.idea
+/aplicativoTourGemeas/.idea
+/aplicativoTourGemeas/app/build
