@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGemeas"
         tools:targetApi="31">
-<<<<<<< HEAD
         <activity
             android:name=".CuidadoActivity"
             android:exported="false" />
@@ -42,7 +41,6 @@
          -->
         <activity
             android:name=".CriarContaActivity"
->>>>>>> 6967601270d2fa7ffa7ff52d2f64df503aedfbb0
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
