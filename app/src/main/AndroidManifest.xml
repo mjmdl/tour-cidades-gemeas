@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGemeas"
         tools:targetApi="31">
-        <activity
+        <!-- <activity
             android:name=".CuidadoActivity"
             android:exported="false" />
         <activity
@@ -26,21 +26,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-=======
-        <!--  <activity
-             android:name=".CriarContaActivity"
-             android:exported="false" />
+            android:exported="false" />
 
-          <activity
-             android:name=".IniciarSessaoActivity"
-             android:exported="false" />
-
-         <activity
-             android:name=".LoguinActivity"
-             android:exported="false" />
          -->
         <activity
-            android:name=".CriarContaActivity"
+            android:name=".LoguinActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
