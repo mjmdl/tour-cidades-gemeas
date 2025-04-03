@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,177 +9,132 @@
     android:background="#F5F5F5"
     tools:context=".CriarContaActivity">
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#189A46"
-        android:text="criar conta"
-        android:textColor="#F9FBFB"
-        app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.955" />
-
-    <TextView
-        android:id="@+id/textEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:phoneNumber="false"
-        android:text="Endereço de email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.213"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:phoneNumber="false"
-        android:text="Usuário"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
-
     <View
         android:id="@+id/view"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="67dp"
-        android:background="#FDFDFD"
-        android:backgroundTint="#189A46"
+        android:background="#189A46"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="-9dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criar Conta"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="389dp"
         android:layout_height="304dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/projeto_criador_de_logotipo__1__1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138"
-        app:srcCompat="@drawable/projeto_criador_de_logotipo__1__1" />
-
+        app:layout_constraintVertical_bias="0.138" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="152dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="16dp"
-        android:text="Criar conta "
-        android:textColor="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        android:id="@+id/textEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço de Email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/imageView6"
+        app:layout_constraintHorizontal_bias="0.1" />
 
     <EditText
         android:id="@+id/editEnderecoEmail"
         android:layout_width="283dp"
         android:layout_height="50dp"
         android:background="@drawable/borda_verde"
-        android:ems="10"
         android:hint="Endereço de email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintTop_toBottomOf="@id/textEmail"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuário"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editEnderecoEmail"
+        app:layout_constraintHorizontal_bias="0.1" />
 
     <EditText
         android:id="@+id/editNameUser"
         android:layout_width="283dp"
         android:layout_height="50dp"
         android:background="@drawable/borda_verde"
-        android:ems="10"
+        android:hint="Nome de usuário"
         android:inputType="text"
         android:padding="10dp"
-        android:hint="Nome de usuário"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676" />
+        app:layout_constraintTop_toBottomOf="@id/textUser"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:ellipsize="start"
-        android:phoneNumber="false"
         android:text="Senha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745" />
-
-
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="339dp"
-        android:layout_height="53dp"
-        android:checked="false"
-        android:text="Eu concordo com Condições Utilização e
-   Políticas de Privacidade*"
-        android:textColor="#666666"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883" />
+        app:layout_constraintTop_toBottomOf="@id/editNameUser"
+        app:layout_constraintHorizontal_bias="0.1" />
 
     <EditText
         android:id="@+id/editTextSenha"
         android:layout_width="283dp"
         android:layout_height="50dp"
-        android:layout_weight="1"
         android:background="@drawable/borda_verde"
-        android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
+        app:layout_constraintTop_toBottomOf="@id/textPassword"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <CheckBox
         android:id="@+id/checkBoxMostrarSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mostrar"
+        android:text="Mostrar Senha"
+        app:layout_constraintStart_toEndOf="@id/editTextSenha"
+        app:layout_constraintTop_toTopOf="@id/editTextSenha" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+        android:text="Eu concordo com as Condições de Utilização e Políticas de Privacidade"
+        android:textColor="#666666"
+        app:layout_constraintTop_toBottomOf="@id/editTextSenha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginTop="32dp"
+        android:text="Criar Conta"
+        android:textColor="#F9FBFB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
-
-
+        app:layout_constraintTop_toBottomOf="@id/checkBox"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
