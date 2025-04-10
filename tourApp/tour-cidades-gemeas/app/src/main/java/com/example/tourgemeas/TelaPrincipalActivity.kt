@@ -1,6 +1,6 @@
 package com.example.tourgemeas
 
-
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -27,6 +27,7 @@ import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 class TelaPrincipalActivity : AppCompatActivity() {
 
     private lateinit var map: MapView
+    private lateinit var tabLayout: TabLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,52 +49,23 @@ class TelaPrincipalActivity : AppCompatActivity() {
             insets
         }
 
-        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
 
-        tabLayout.addTab(tabLayout.newTab().setText("Perfil"))
+        tabLayout = findViewById(R.id.tabLayout)
         tabLayout.addTab(tabLayout.newTab().setText("Mapa"))
         tabLayout.addTab(tabLayout.newTab().setText("Enigma"))
-        tabLayout.addTab(tabLayout.newTab().setText("Classificação"))
+
+        tabLayout.selectTab(tabLayout.getTabAt(0))
+        carregarMapa()
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 when (tab.position) {
                     0 -> {
-                        // Outras abas
+                        carregarMapa()
                     }
                     1 -> {
-                        val inflater = LayoutInflater.from(this@TelaPrincipalActivity)
-                        val mapView = inflater.inflate(R.layout.fragment_mapa, null)
-                        val frame = findViewById<FrameLayout>(R.id.content_frame)
-                        frame.removeAllViews()
-                        frame.addView(mapView)
-
-                        map = mapView.findViewById(R.id.map)
-                        Configuration.getInstance().load(applicationContext, PreferenceManager.getDefaultSharedPreferences(applicationContext))
-
-                        map.setTileSource(TileSourceFactory.MAPNIK)
-                        map.setMultiTouchControls(true)
-
-                        val mapController = map.controller
-                        mapController.setZoom(18.0)
-
-                        val locationOverlay = MyLocationNewOverlay(GpsMyLocationProvider(this@TelaPrincipalActivity), map)
-                        locationOverlay.enableMyLocation()
-                        locationOverlay.enableFollowLocation()
-                        map.overlays.add(locationOverlay)
-                    }
-                    2 -> {
-                        val inflater = LayoutInflater.from(this@TelaPrincipalActivity)
-                        val listaView = inflater.inflate(R.layout.fragment_lista, null)
-                        val frame = findViewById<FrameLayout>(R.id.content_frame)
-                        frame.removeAllViews()
-                        frame.addView(listaView)
-
-                        val recyclerView = listaView.findViewById<RecyclerView>(R.id.recyclerView)
-                        recyclerView.layoutManager = LinearLayoutManager(this@TelaPrincipalActivity)
-
-                        val itens = listOf("Enigma 1", "Enigma 2", "Enigma 3", "Enigma 4")
-                        recyclerView.adapter = ListaAdapter(itens)
+                        val intent = Intent(this@TelaPrincipalActivity, EnigmaActivity::class.java)
+                        startActivity(intent)
                     }
                 }
             }
@@ -103,10 +75,37 @@ class TelaPrincipalActivity : AppCompatActivity() {
         })
     }
 
+    private fun carregarMapa() {
+        val inflater = LayoutInflater.from(this)
+        val mapView = inflater.inflate(R.layout.fragment_mapa, null)
+        val frame = findViewById<FrameLayout>(R.id.content_frame)
+        frame.removeAllViews()
+        frame.addView(mapView)
+
+        map = mapView.findViewById(R.id.map)
+        Configuration.getInstance().load(applicationContext, PreferenceManager.getDefaultSharedPreferences(applicationContext))
+
+        map.setTileSource(TileSourceFactory.MAPNIK)
+        map.setMultiTouchControls(true)
+
+        val mapController = map.controller
+        mapController.setZoom(18.0)
+
+        val locationOverlay = MyLocationNewOverlay(GpsMyLocationProvider(this), map)
+        locationOverlay.enableMyLocation()
+        locationOverlay.enableFollowLocation()
+        map.overlays.add(locationOverlay)
+    }
+
     override fun onResume() {
         super.onResume()
         if (::map.isInitialized) {
             map.onResume()
+        }
+        
+
+        if (::tabLayout.isInitialized) {
+            tabLayout.selectTab(tabLayout.getTabAt(0))
         }
     }
 

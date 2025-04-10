@@ -1,5 +1,6 @@
 package com.example.tourgemeas
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.tabs.TabLayout
 
 class EnigmaActivity : AppCompatActivity() {
+    private lateinit var tabLayout: TabLayout
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -20,26 +23,38 @@ class EnigmaActivity : AppCompatActivity() {
         }
 
 
-        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
-
-
-        tabLayout.addTab(tabLayout.newTab().setText("Perfil"))
+        tabLayout = findViewById(R.id.tabLayout)
         tabLayout.addTab(tabLayout.newTab().setText("Mapa"))
         tabLayout.addTab(tabLayout.newTab().setText("Enigma"))
-        tabLayout.addTab(tabLayout.newTab().setText("Classificação"))
+        
 
+        tabLayout.selectTab(tabLayout.getTabAt(1))
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                // abas navegacao
-                when (tab.position) {//*inicia navegacao */ }
-                    0 -> { }
+                when (tab.position) {
+                    0 -> {
+                        val intent = Intent(this@EnigmaActivity, TelaPrincipalActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                    1 -> {
 
+                    }
                 }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+    }
+    
+    override fun onResume() {
+        super.onResume()
+        
+
+        if (::tabLayout.isInitialized) {
+            tabLayout.selectTab(tabLayout.getTabAt(1))
+        }
     }
 }

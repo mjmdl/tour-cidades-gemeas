@@ -60,6 +60,9 @@
         <activity android:name=".LoguinActivity" />
         <activity android:name=".IniciarSessaoActivity"/>
         <activity android:name=".TelaPrincipalActivity"/>
+        <activity android:name=".EnigmaActivity" />
+
+
 
         <activity
             android:name=".MainActivity"
