@@ -18,6 +18,9 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import android.Manifest
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.tourgemeas.RecyclerView.ListaAdapter
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 
@@ -78,6 +81,19 @@ class TelaPrincipalActivity : AppCompatActivity() {
                         locationOverlay.enableMyLocation()
                         locationOverlay.enableFollowLocation()
                         map.overlays.add(locationOverlay)
+                    }
+                    2 -> {
+                        val inflater = LayoutInflater.from(this@TelaPrincipalActivity)
+                        val listaView = inflater.inflate(R.layout.fragment_lista, null)
+                        val frame = findViewById<FrameLayout>(R.id.content_frame)
+                        frame.removeAllViews()
+                        frame.addView(listaView)
+
+                        val recyclerView = listaView.findViewById<RecyclerView>(R.id.recyclerView)
+                        recyclerView.layoutManager = LinearLayoutManager(this@TelaPrincipalActivity)
+
+                        val itens = listOf("Enigma 1", "Enigma 2", "Enigma 3", "Enigma 4")
+                        recyclerView.adapter = ListaAdapter(itens)
                     }
                 }
             }
