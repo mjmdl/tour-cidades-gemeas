@@ -1,39 +1,50 @@
 package com.example.tourgemeas
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.tourgemeas.databinding.ActivityDicasEnigmasBinding
 import com.google.android.material.tabs.TabLayout
 
 class DicasEnigmasActivity : AppCompatActivity() {
+
+    private lateinit var telaEnigmaDetalhadoAct: ActivityDicasEnigmasBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        telaEnigmaDetalhadoAct = ActivityDicasEnigmasBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_dicas_enigmas)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContentView(telaEnigmaDetalhadoAct.root)
+
+        telaEnigmaDetalhadoAct.inicarAventura.setOnClickListener {
+            val intent = Intent(this, EnigmaDetalhadoActivity::class.java)
+            startActivity(intent)
         }
 
+        telaEnigmaDetalhadoAct.outraDica.setOnClickListener {
 
-        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        }
 
+        val tabLayout = telaEnigmaDetalhadoAct.tabLayout
 
-        tabLayout.addTab(tabLayout.newTab().setText("Perfil"))
         tabLayout.addTab(tabLayout.newTab().setText("Mapa"))
         tabLayout.addTab(tabLayout.newTab().setText("Enigma"))
-        tabLayout.addTab(tabLayout.newTab().setText("Classificação"))
-
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                // abas navegacao
-                when (tab.position) {//*inicia navegacao */ }
-                    0 -> { }
-
+                when (tab.position) {
+                    0 -> {
+                        val intent = Intent(this@DicasEnigmasActivity, TelaPrincipalActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                    1 -> {
+                        val intent = Intent(this@DicasEnigmasActivity, EnigmaActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
                 }
             }
 

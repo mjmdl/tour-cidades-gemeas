@@ -25,6 +25,9 @@ class LoguinActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        telaLoguinAct.btnRegistrar.setOnClickListener() {
+            val intent = Intent(this, CriarContaActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
