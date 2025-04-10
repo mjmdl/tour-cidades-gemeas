@@ -61,7 +61,7 @@ Preste
         app:layout_constraintVertical_bias="0.614" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnIniciarSessao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#189A46"

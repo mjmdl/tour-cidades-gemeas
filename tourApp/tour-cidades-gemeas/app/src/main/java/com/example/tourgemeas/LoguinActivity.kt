@@ -21,9 +21,10 @@ class LoguinActivity : AppCompatActivity() {
         setContentView(telaLoguinAct.root)
 
         telaLoguinAct.btnInicialSessao.setOnClickListener() {
-            val intent = Intent(this, TelaPrincipalActivity::class.java)
+            val intent = Intent(this, IniciarSessaoActivity::class.java)
             startActivity(intent)
         }
+
 
     }
 }
