@@ -23,11 +23,15 @@ class EnigmaActivity : AppCompatActivity() {
         }
 
 
+        findViewById<android.widget.LinearLayout>(R.id.enigma1).setOnClickListener {
+            val intent = Intent(this, DicasEnigmasActivity::class.java)
+            startActivity(intent)
+        }
+
         tabLayout = findViewById(R.id.tabLayout)
         tabLayout.addTab(tabLayout.newTab().setText("Mapa"))
         tabLayout.addTab(tabLayout.newTab().setText("Enigma"))
         
-
         tabLayout.selectTab(tabLayout.getTabAt(1))
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
@@ -52,7 +56,6 @@ class EnigmaActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         
-
         if (::tabLayout.isInitialized) {
             tabLayout.selectTab(tabLayout.getTabAt(1))
         }
