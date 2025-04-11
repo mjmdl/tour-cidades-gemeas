@@ -25,7 +25,9 @@
            android:name=".DicasEnigmasActivity"
            android:exported="false" />
 
-
+       <activity
+           android:name=".EnigmaDicasActivity"
+           android:exported="false" />
 
        <activity
            android:name=".EnigmaActivity"
@@ -59,9 +61,6 @@
         <activity android:name=".IniciarSessaoActivity"/>
         <activity android:name=".TelaPrincipalActivity"/>
         <activity android:name=".EnigmaActivity" />
-        <activity android:name=".CriarContaActivity" />
-        <activity android:name=".DicasEnigmasActivity" />
-        <activity android:name=".EnigmaDetalhadoActivity" />
 
 
 
