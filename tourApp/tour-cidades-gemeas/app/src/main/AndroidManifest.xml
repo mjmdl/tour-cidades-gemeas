@@ -17,24 +17,50 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGemeas"
         tools:targetApi="31">
+        <!-- <activity
+           android:name=".MainActivity"
+           android:exported="false" />
 
+       <activity
+           android:name=".DicasEnigmasActivity"
+           android:exported="false" />
 
+       <activity
+           android:name=".EnigmaDicasActivity"
+           android:exported="false" />
 
-       <!-- <activity
+       <activity
+           android:name=".EnigmaActivity"
+           android:exported="false" />
+
+       <activity
            android:name=".CuidadoActivity"
            android:exported="false" />
 
        <activity
            android:name=".CriarContaActivity"
-           android:exported="false" /> -->
+           android:exported="false" />
 
+       <activity
+           android:name=".IniciarSessaoActivity"
+           android:exported="false" />
+
+       <activity
+           android:name=".LoguinActivity"
+           android:exported="false" />
+
+       <activity
+           android:name=".MainActivity"
+           android:exported="false" />
+
+       <activity
+           android:name=".TelaPrincipalActivity"
+           android:exported="false" />
+       -->
         <activity android:name=".LoguinActivity" />
         <activity android:name=".IniciarSessaoActivity"/>
         <activity android:name=".TelaPrincipalActivity"/>
         <activity android:name=".EnigmaActivity" />
-        <activity android:name=".DicasEnigmasActivity" />
-        <activity android:name=".EnigmaDetalhadoActivity" />
-        <activity android:name=".CriarContaActivity" />
 
 
 
