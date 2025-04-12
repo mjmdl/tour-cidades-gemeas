@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TourGemeasApplication {
+public class TourGemeasApp {
 	public static void main(String[] args) {
-		SpringApplication.run(TourGemeasApplication.class, args);
+		SpringApplication.run(TourGemeasApp.class, args);
 	}
 }
