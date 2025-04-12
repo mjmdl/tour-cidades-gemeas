@@ -4,31 +4,43 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tourgemeas.databinding.ActivityDicasEnigmasBinding
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.tabs.TabLayout
+import com.example.tourgemeas.databinding.ActivityDicasEnigmasBinding
 
 class DicasEnigmasActivity : AppCompatActivity() {
 
-    private lateinit var telaEnigmaDetalhadoAct: ActivityDicasEnigmasBinding
+    private lateinit var binding: ActivityDicasEnigmasBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        telaEnigmaDetalhadoAct = ActivityDicasEnigmasBinding.inflate(layoutInflater)
+        
+        binding = ActivityDicasEnigmasBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(telaEnigmaDetalhadoAct.root)
+        setContentView(binding.root)
 
-        telaEnigmaDetalhadoAct.inicarAventura.setOnClickListener {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        binding.inicarAventura.setOnClickListener {
             val intent = Intent(this, EnigmaDetalhadoActivity::class.java)
             startActivity(intent)
         }
 
-        telaEnigmaDetalhadoAct.outraDica.setOnClickListener {
-
+        binding.outraDica.setOnClickListener {
+            // Implementar lógica para mostrar outra dica
         }
 
-        val tabLayout = telaEnigmaDetalhadoAct.tabLayout
+        binding.menuHamburguer.setOnClickListener {
+            val intent = Intent(this, PerfilActivity::class.java)
+            startActivity(intent)
+        }
 
+        val tabLayout = binding.tabLayout
         tabLayout.addTab(tabLayout.newTab().setText("Mapa"))
         tabLayout.addTab(tabLayout.newTab().setText("Enigma"))
 

@@ -24,13 +24,14 @@
             android:text="Enigmas"
             android:gravity="center"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="48dp"
-            android:layout_height="match_parent"
+            android:id="@+id/menuHamburguer"
+            android:layout_width="68dp"
+            android:layout_height="86dp"
+            android:padding="12dp"
             app:srcCompat="@drawable/menu_24dp_e3e3e3_fill0_wght400_grad0_opsz24" />
     </FrameLayout>
 
@@ -85,62 +86,37 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="4dp"
-                android:text="Dica 1"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/dica1_text"
-                android:layout_width="345dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/borda_verde"
-                android:padding="12dp"
-                android:text="Minha casa é um morro, e dentro de mim há um \nespaço para oração."
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="15dp">
-
+                android:layout_marginTop="16dp">
 
                 <Button
                     android:id="@+id/inicarAventura"
-                    android:layout_width="20dp"
-                    android:backgroundTint="#189A46"
-                    android:textColor="#F9FBFB"
-                    app:cornerRadius="10dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:padding="10dp"
-                    android:text="Inicar aventura" />
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#189A46"
+                    android:text="Iniciar Aventura"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="10dp" />
 
                 <Button
                     android:id="@+id/outraDica"
-                    android:layout_width="20dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="80dp"
                     android:layout_weight="1"
+                    android:layout_marginStart="8dp"
                     android:backgroundTint="#FBFFFC"
-                    android:text="Outra dica"
+                    android:text="Outra Dica"
                     android:textColor="#01AA4F"
                     app:cornerRadius="10dp"
                     app:strokeColor="#189A46"
                     app:strokeWidth="2dp" />
             </LinearLayout>
-
 
         </LinearLayout>
     </ScrollView>

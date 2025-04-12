@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.tabs.TabLayout
+import android.widget.ImageView
 
 class EnigmaActivity : AppCompatActivity() {
     private lateinit var tabLayout: TabLayout
@@ -23,8 +24,14 @@ class EnigmaActivity : AppCompatActivity() {
         }
 
 
+
         findViewById<android.widget.LinearLayout>(R.id.enigma1).setOnClickListener {
             val intent = Intent(this, DicasEnigmasActivity::class.java)
+            startActivity(intent)
+        }
+        val menuHamburguer = findViewById<ImageView>(R.id.menuHamburguer)
+        menuHamburguer.setOnClickListener {
+            val intent = Intent(this, PerfilActivity::class.java)
             startActivity(intent)
         }
 
