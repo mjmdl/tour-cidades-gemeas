@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  tour_postgres:
+    container_name: tour_postgres
+    image: postgres:16
+    restart: no
+    volumes:
+      - /var/lib/data:/var/lib/postgresql/data
+      - ./src/main/resources/db/v1_init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - ${DATABASE_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
