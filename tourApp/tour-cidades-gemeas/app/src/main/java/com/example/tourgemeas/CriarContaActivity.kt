@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.tourgemeas.api.RetrofitClient
+import com.example.tourgemeas.api.ApiClient
 import com.example.tourgemeas.databinding.ActivityCriarContaBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -86,7 +86,7 @@ class CriarContaActivity : AppCompatActivity() {
 
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    val response = RetrofitClient.authService.register(
+                    val response = ApiClient.authService.register(
                         com.example.tourgemeas.api.RegisterRequest(
                             name = name,
                             email = email,
