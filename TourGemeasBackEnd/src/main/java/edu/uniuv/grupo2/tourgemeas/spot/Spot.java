@@ -3,7 +3,7 @@ package edu.uniuv.grupo2.tourgemeas.spot;
 import java.math.BigDecimal;
 import java.util.List;
 
-import edu.uniuv.grupo2.tourgemeas.entities.SpotHint;
+import edu.uniuv.grupo2.tourgemeas.spothint.SpotHint;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

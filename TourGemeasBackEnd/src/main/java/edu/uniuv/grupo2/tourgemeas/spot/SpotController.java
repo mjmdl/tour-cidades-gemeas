@@ -27,16 +27,16 @@ public class SpotController {
 	}
 
 	@AdminOnly
-	@PatchMapping("/spot/id={id}")
-	public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody @Valid UpdateSpot updateSpot) {
-		spotService.update(id, updateSpot);
+	@PatchMapping("/spot/id={spotId}")
+	public ResponseEntity<Void> update(@PathVariable Long spotId, @RequestBody @Valid UpdateSpot updateSpot) {
+		spotService.update(spotId, updateSpot);
 		return ResponseEntity.noContent().build();
 	}
 
 	@AdminOnly
-	@DeleteMapping("/spot/id={id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
-		spotService.delete(id);
+	@DeleteMapping("/spot/id={spotId}")
+	public ResponseEntity<Void> delete(@PathVariable Long spotId) {
+		spotService.delete(spotId);
 		return ResponseEntity.noContent().build();
 	}
 
@@ -45,8 +45,8 @@ public class SpotController {
 		return ResponseEntity.ok(spotService.page(pageable));
 	}
 
-	@GetMapping("/spot/id={id}")
-	public ResponseEntity<Spot> find(@PathVariable Long id) {
-		return ResponseEntity.ok(spotService.find(id));
+	@GetMapping("/spot/id={spotId}")
+	public ResponseEntity<Spot> find(@PathVariable Long spotId) {
+		return ResponseEntity.ok(spotService.find(spotId));
 	}
 }

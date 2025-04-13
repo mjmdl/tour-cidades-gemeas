@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "TourGemeas",
-    "dateExported": "2025-04-13T17:47:27.034Z",
+    "dateExported": "2025-04-13T18:58:37.048Z",
     "version": "1.1",
     "folders": [
         {
@@ -17,6 +17,13 @@
             "containerId": "",
             "created": "2025-04-13T16:56:04.590Z",
             "sortNum": 20000
+        },
+        {
+            "_id": "1486babb-3716-48d9-a930-8952ab741120",
+            "name": "SpotHint",
+            "containerId": "",
+            "created": "2025-04-13T18:04:43.664Z",
+            "sortNum": 30000
         }
     ],
     "requests": [
@@ -67,12 +74,12 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2025-04-13T16:56:11.102Z",
-            "modified": "2025-04-13T17:44:05.829Z",
+            "modified": "2025-04-13T18:57:40.861Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Super Pão\",\n  \"score\": 50,\n  \"latitude\": 434,\n  \"longitude\": 34434\n}",
+                "raw": "{\n  \"name\": \"Morro do Cristo\",\n  \"score\": 50,\n  \"latitude\": -0,\n  \"longitude\": 0\n}",
                 "form": []
             },
             "auth": {
@@ -85,7 +92,7 @@
             "_id": "768ddffe-ae46-4e53-b5e0-bdd18d4b9b8f",
             "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
             "containerId": "bf69af66-7685-4d7e-84c8-fd55dd07ae23",
-            "name": "spot/id=",
+            "name": "spot/id={spotId}",
             "url": "127.0.0.1:8081/spot/id=3",
             "method": "PATCH",
             "sortNum": 22500,
@@ -108,7 +115,7 @@
             "_id": "f3242f06-f447-439d-b780-f254ad2d5a5f",
             "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
             "containerId": "bf69af66-7685-4d7e-84c8-fd55dd07ae23",
-            "name": "spot/id=",
+            "name": "spot/id={spotId}",
             "url": "127.0.0.1:8081/spot/id=2",
             "method": "DELETE",
             "sortNum": 25000,
@@ -175,15 +182,92 @@
             "tests": []
         },
         {
+            "_id": "0388e6ad-9ce0-4d10-933a-5064029accde",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "1486babb-3716-48d9-a930-8952ab741120",
+            "name": "/spot-hint",
+            "url": "127.0.0.1:8081/spot-hint",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-04-13T18:04:53.901Z",
+            "modified": "2025-04-13T18:58:06.638Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"spotId\": 6,\n  \"description\": \"Tá óbvio né\",\n  \"score\": 300\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTU2NDAzLCJleHAiOjE3NDUxNjEyMDN9.9Ru-FtGqC2nLgDAuMlEZ-Jiygc3qSALk9QO_cgVRyjg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "215e2f6a-4e25-4e38-871e-dc66bb92625a",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "1486babb-3716-48d9-a930-8952ab741120",
+            "name": "/spot-hint/id={spotHintId}",
+            "url": "127.0.0.1:8081/spot-hint/id=3",
+            "method": "DELETE",
+            "sortNum": 35000,
+            "created": "2025-04-13T18:26:39.928Z",
+            "modified": "2025-04-13T18:27:16.173Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTU2NDAzLCJleHAiOjE3NDUxNjEyMDN9.9Ru-FtGqC2nLgDAuMlEZ-Jiygc3qSALk9QO_cgVRyjg"
+            },
+            "tests": []
+        },
+        {
             "_id": "199583f7-ea38-41a2-a1a0-0d7c6a2468f1",
             "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
             "containerId": "bf69af66-7685-4d7e-84c8-fd55dd07ae23",
-            "name": "spot/id=",
+            "name": "spot/id={spotId}",
             "url": "127.0.0.1:8081/spot/id=3",
             "method": "GET",
             "sortNum": 40000,
             "created": "2025-04-13T17:46:46.180Z",
             "modified": "2025-04-13T17:47:09.799Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTU2NDAzLCJleHAiOjE3NDUxNjEyMDN9.9Ru-FtGqC2nLgDAuMlEZ-Jiygc3qSALk9QO_cgVRyjg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d64c68be-e592-4748-9f33-719e0ffee73a",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "1486babb-3716-48d9-a930-8952ab741120",
+            "name": "/spot-hint/spot-id={spotId}",
+            "url": "127.0.0.1:8081/spot-hint/spot-id=6",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-04-13T18:24:29.130Z",
+            "modified": "2025-04-13T18:58:12.851Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTU2NDAzLCJleHAiOjE3NDUxNjEyMDN9.9Ru-FtGqC2nLgDAuMlEZ-Jiygc3qSALk9QO_cgVRyjg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "89000813-a5f6-4797-bffa-986de95ab079",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "1486babb-3716-48d9-a930-8952ab741120",
+            "name": "/spot-hint/id={spotHintId}",
+            "url": "127.0.0.1:8081/spot-hint/id=4",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-04-13T18:54:22.806Z",
+            "modified": "2025-04-13T18:56:57.515Z",
             "headers": [],
             "params": [],
             "auth": {
