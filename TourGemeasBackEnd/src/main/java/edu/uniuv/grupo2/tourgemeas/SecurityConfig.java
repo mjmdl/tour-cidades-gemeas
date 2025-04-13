@@ -17,7 +17,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import edu.uniuv.grupo2.tourgemeas.auth.AuthController;
 import edu.uniuv.grupo2.tourgemeas.auth.AuthFilter;
-import edu.uniuv.grupo2.tourgemeas.auth.LoggingFilter;
 import lombok.AllArgsConstructor;
 
 @Configuration
@@ -26,7 +25,6 @@ import lombok.AllArgsConstructor;
 public class SecurityConfig {
 	private final AuthenticationProvider authenticationProvider;
     private final AuthFilter authFilter;
-    private final LoggingFilter loggingFilter;
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -46,7 +44,6 @@ public class SecurityConfig {
 			)
 			.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.authenticationProvider(authenticationProvider)
-			.addFilterBefore(loggingFilter, UsernamePasswordAuthenticationFilter.class)
 			.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
 			.formLogin(login -> login.disable())
 			.httpBasic(basic -> basic.disable())
