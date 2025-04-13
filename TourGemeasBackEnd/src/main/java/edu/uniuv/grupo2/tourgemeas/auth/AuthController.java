@@ -5,6 +5,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -49,6 +51,8 @@ public class AuthController {
 
 	@PostMapping(path = CHECK_SESSION_PATH)
 	@ResponseStatus(HttpStatus.OK)
-	public void checkSession() {
+	public ResponseEntity<UserDetails> checkSession(Authentication authentication) {
+		UserDetails userDetails = (UserDetails)authentication.getPrincipal();
+		return ResponseEntity.ok(userDetails);
 	}
 }

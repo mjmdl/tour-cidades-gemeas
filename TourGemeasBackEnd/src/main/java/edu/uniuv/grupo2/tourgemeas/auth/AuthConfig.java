@@ -32,7 +32,7 @@ public class AuthConfig {
 	@Bean
 	public UserDetailsService userDetailsService() {
 		return username -> userRepository
-			.findByEmail(username)
+			.findByEmailIgnoreCase(username)
 			.orElseThrow(() -> new UsernameNotFoundException(("O usuário não foi encontrado.")));
 	}
 

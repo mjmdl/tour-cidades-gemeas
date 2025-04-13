@@ -1,7 +1,9 @@
-package edu.uniuv.grupo2.tourgemeas.entities;
+package edu.uniuv.grupo2.tourgemeas.spothint;
 
 import java.util.List;
 
+import edu.uniuv.grupo2.tourgemeas.entities.UserSpotHint;
+import edu.uniuv.grupo2.tourgemeas.spot.Spot;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +28,9 @@ public class SpotHint {
 
 	@Column(name = "descricao", nullable = false)
 	private String description;
+
+	@Column(name = "pontuacao", nullable = false)
+	private Long score;
 
 	@ManyToOne
 	@JoinColumn(name = "pontoturisticoid", nullable = false)

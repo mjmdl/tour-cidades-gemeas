@@ -9,6 +9,6 @@ import edu.uniuv.grupo2.tourgemeas.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-	public Optional<User> findByEmail(String email);
-	public boolean existsByEmail(String email);
+	public Optional<User> findByEmailIgnoreCase(String email);
+	public boolean existsByEmailIgnoreCase(String email);
 }

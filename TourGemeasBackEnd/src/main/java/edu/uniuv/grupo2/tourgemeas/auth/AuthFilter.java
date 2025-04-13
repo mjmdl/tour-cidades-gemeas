@@ -72,17 +72,14 @@ public class AuthFilter extends OncePerRequestFilter {
 		if (authentication != null) {
 			return;
 		}
-
 		String username = jwtService.usernameOf(token);
 		if (username == null) {
 			return;
 		}
-
 		UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
 		if (!jwtService.verify(token, userDetails)) {
 			return;
 		}
-
 		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
 			userDetails, 
 			null, 
