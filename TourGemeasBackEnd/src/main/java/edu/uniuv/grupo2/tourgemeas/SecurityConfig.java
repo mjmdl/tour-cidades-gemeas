@@ -17,6 +17,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import edu.uniuv.grupo2.tourgemeas.auth.AuthController;
 import edu.uniuv.grupo2.tourgemeas.auth.AuthFilter;
+import edu.uniuv.grupo2.tourgemeas.auth.LoggingFilter;
 import lombok.AllArgsConstructor;
 
 @Configuration
@@ -25,6 +26,7 @@ import lombok.AllArgsConstructor;
 public class SecurityConfig {
 	private final AuthenticationProvider authenticationProvider;
     private final AuthFilter authFilter;
+    private final LoggingFilter loggingFilter;
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -39,10 +41,12 @@ public class SecurityConfig {
 						AuthController.SIGN_IN_PATH
 					).permitAll()
 					.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+					.requestMatchers("/**").permitAll()
 					.anyRequest().authenticated()
 			)
 			.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.authenticationProvider(authenticationProvider)
+			.addFilterBefore(loggingFilter, UsernamePasswordAuthenticationFilter.class)
 			.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
 			.formLogin(login -> login.disable())
 			.httpBasic(basic -> basic.disable())
@@ -52,13 +56,10 @@ public class SecurityConfig {
 	@Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(
-            "http://localhost:8005",
-            "https://tour-cidades-gemeas-production.up.railway.app"
-        ));
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With", "Accept"));
-        configuration.setExposedHeaders(List.of("Authorization"));
+        configuration.setAllowedOrigins(List.of("*"));
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
+        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setExposedHeaders(List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);
         configuration.setMaxAge(3600L);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
