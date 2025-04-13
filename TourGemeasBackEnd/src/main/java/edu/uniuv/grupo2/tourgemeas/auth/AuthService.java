@@ -33,7 +33,7 @@ public class AuthService {
 
 	public SignInResult signIn(SignIn signInDto) {
 		User user = userRepository
-			.findByEmai(signInDto.getUsername())
+			.findByEmail(signInDto.getUsername())
 			.orElseThrow(() -> new HttpException(HttpStatus.NOT_FOUND, "USERNAME_NOT_FOUND", "Usuário não encontrado."));
 		if (!passwordEncoder.matches(signInDto.getPassword(), user.getPassword())) {
 			throw new HttpException(HttpStatus.UNAUTHORIZED, "INVALID_CREDENTIALS", "Usuário e senha estão incorretos.");
