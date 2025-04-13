@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="blue">#F5F5F5</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">TourGemeas</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <style name="Base.Theme.TourGemeas" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.TourGemeas" parent="Base.Theme.TourGemeas"/>
+</resources>

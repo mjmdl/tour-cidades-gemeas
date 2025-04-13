@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_criar_conta.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_criar_conta.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_tela_principal.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_tela_principal.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_cuidado.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_cuidado.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_iniciar_sessao.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_iniciar_sessao.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\fragment_mapa.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\fragment_mapa.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_loguin.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_loguin.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\fragment_lista.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\fragment_lista.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_dicas_enigmas.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_dicas_enigmas.xml"
+    },
+    {
+        "merged": "com.example.tourgemeas.app-mergeDebugResources-31:/layout/activity_iniciar_sessao.xml",
+        "source": "com.example.tourgemeas.app-main-34:/layout/activity_iniciar_sessao.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_perfil.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_perfil.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\item_lista.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\item_lista.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_enigma.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_enigma.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-mergeDebugResources-31:\\layout\\activity_enigma_detalhado.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.11.1\\com.example.tourgemeas.app-main-34:\\layout\\activity_enigma_detalhado.xml"
+    }
+]

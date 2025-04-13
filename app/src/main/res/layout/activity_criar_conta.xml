@@ -45,12 +45,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Endereço de Email"
+<<<<<<< Updated upstream:app/src/main/res/layout/activity_criar_conta.xml
+=======
+        app:layout_constraintBottom_toTopOf="@+id/editEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+>>>>>>> Stashed changes:tourApp/tour-cidades-gemeas/app/src/main/res/layout/activity_criar_conta.xml
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView6"
         app:layout_constraintHorizontal_bias="0.1" />
 
     <EditText
-        android:id="@+id/editEnderecoEmail"
+        android:id="@+id/editEmail"
         android:layout_width="283dp"
         android:layout_height="50dp"
         android:background="@drawable/borda_verde"
@@ -67,11 +73,15 @@
         android:layout_height="wrap_content"
         android:text="Usuário"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< Updated upstream:app/src/main/res/layout/activity_criar_conta.xml
         app:layout_constraintTop_toBottomOf="@id/editEnderecoEmail"
         app:layout_constraintHorizontal_bias="0.1" />
+=======
+        app:layout_constraintTop_toBottomOf="@id/editEmail" />
+>>>>>>> Stashed changes:tourApp/tour-cidades-gemeas/app/src/main/res/layout/activity_criar_conta.xml
 
     <EditText
-        android:id="@+id/editNameUser"
+        android:id="@+id/editNome"
         android:layout_width="283dp"
         android:layout_height="50dp"
         android:background="@drawable/borda_verde"
@@ -88,11 +98,15 @@
         android:layout_height="wrap_content"
         android:text="Senha"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< Updated upstream:app/src/main/res/layout/activity_criar_conta.xml
         app:layout_constraintTop_toBottomOf="@id/editNameUser"
         app:layout_constraintHorizontal_bias="0.1" />
+=======
+        app:layout_constraintTop_toBottomOf="@id/editNome" />
+>>>>>>> Stashed changes:tourApp/tour-cidades-gemeas/app/src/main/res/layout/activity_criar_conta.xml
 
     <EditText
-        android:id="@+id/editTextSenha"
+        android:id="@+id/editSenha"
         android:layout_width="283dp"
         android:layout_height="50dp"
         android:background="@drawable/borda_verde"
@@ -119,10 +133,17 @@
         android:textColor="#666666"
         app:layout_constraintTop_toBottomOf="@id/editTextSenha"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< Updated upstream:app/src/main/res/layout/activity_criar_conta.xml
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button5"
+=======
+        app:layout_constraintTop_toBottomOf="@id/editSenha" />
+
+    <Button
+        android:id="@+id/btnCriarConta"
+>>>>>>> Stashed changes:tourApp/tour-cidades-gemeas/app/src/main/res/layout/activity_criar_conta.xml
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         
