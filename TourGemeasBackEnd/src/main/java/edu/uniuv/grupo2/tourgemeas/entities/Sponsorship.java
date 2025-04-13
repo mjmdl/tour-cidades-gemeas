@@ -2,6 +2,7 @@ package edu.uniuv.grupo2.tourgemeas.entities;
 
 import java.math.BigDecimal;
 
+import edu.uniuv.grupo2.tourgemeas.spot.Spot;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
