@@ -2,6 +2,7 @@ package edu.uniuv.grupo2.tourgemeas.entities;
 
 import java.math.BigDecimal;
 
+import edu.uniuv.grupo2.tourgemeas.partner.Partner;
 import edu.uniuv.grupo2.tourgemeas.spot.Spot;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,15 +25,16 @@ public class Sponsorship {
 	@SequenceGenerator(name = "sq_patrociniosid", sequenceName = "sq_patrociniosid", allocationSize = 1)
 	private Long id;
 
-	@Column(name = "evento", nullable = false)
-	private String event;
-
 	@Column(name = "valorporvisita", nullable = true)
 	private BigDecimal visitValue;
 
 	@ManyToOne
 	@JoinColumn(name = "parceriaid", nullable = false)
 	private Partner partner;
+
+	@ManyToOne
+	@JoinColumn(name = "eventoid", nullable = false)
+	private Event event;
 
 	@ManyToOne
 	@JoinColumn(name = "pontoturisticoid", nullable = false)

@@ -1,4 +1,4 @@
-package edu.uniuv.grupo2.tourgemeas.entities;
+package edu.uniuv.grupo2.tourgemeas.partner;
 
 import java.math.BigDecimal;
 

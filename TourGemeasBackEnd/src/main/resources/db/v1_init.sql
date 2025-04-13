@@ -85,10 +85,11 @@ CREATE TABLE Tour.Patrocinios (
 	Id BIGINT NOT NULL DEFAULT NEXTVAL('Tour.Sq_PatrociniosId'),
 	ParceriaId BIGINT NOT NULL,
 	PontoTuristicoId BIGINT NOT NULL,
-	Evento VARCHAR NOT NULL,
+	EventoId BIGINT NOT NULL,
 	ValorPorVisita NUMERIC(8,2),
 	CONSTRAINT Pk_Patrocinios PRIMARY KEY (Id),
 	CONSTRAINT Fk_Parceria FOREIGN KEY (ParceriaId) REFERENCES Tour.Parcerias (Id),
+	CONSTRAINT Fk_EventoId FOREIGN KEY (EventoId) REFERENCES Tour.Evento (Id),
 	CONSTRAINT Fk_PontoTuristicoId FOREIGN KEY (PontoTuristicoId) REFERENCES Tour.PontoTuristico (Id)
 );
 ALTER SEQUENCE Tour.Sq_PatrociniosId OWNED BY Tour.Patrocinios.Id;

@@ -20,7 +20,7 @@ public class SpotHintService {
 		Spot spot = spotRepository
 			.findById(spotHint.spotId())
 			.orElseThrow(() -> new HttpException(HttpStatus.NOT_FOUND, "SPOT_NOT_FOUND", "O ponto turístico não existe."));
-		if (spotHintRepository.existsByDescriptionAndSpotId(spotHint.description(), spotHint.spotId())) {
+		if (spotHintRepository.existsByDescriptionIgnoreCaseAndSpotId(spotHint.description(), spotHint.spotId())) {
 			throw new HttpException(HttpStatus.CONFLICT, "SPOT_HINT_EXISTS", "A dica já existe.");
 		}
 		SpotHint newSpotHint = new SpotHint();

@@ -10,5 +10,5 @@ import jakarta.validation.constraints.NotNull;
 @Repository
 public interface SpotHintRepository extends JpaRepository<SpotHint, Long> {
 	public Page<SpotHint> findAllBySpotId(Long spotId, Pageable pageable);
-	public boolean existsByDescriptionAndSpotId(@NotNull String description, @NotNull Long spotId);
+	public boolean existsByDescriptionIgnoreCaseAndSpotId(@NotNull String description, @NotNull Long spotId);
 }
