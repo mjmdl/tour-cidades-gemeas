@@ -1,5 +1,6 @@
 package edu.uniuv.grupo2.tourgemeas.entities;
 
+import edu.uniuv.grupo2.tourgemeas.event.Event;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

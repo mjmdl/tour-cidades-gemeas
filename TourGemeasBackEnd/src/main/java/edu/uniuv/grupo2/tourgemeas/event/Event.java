@@ -1,8 +1,9 @@
-package edu.uniuv.grupo2.tourgemeas.entities;
+package edu.uniuv.grupo2.tourgemeas.event;
 
 import java.time.OffsetDateTime;
 import java.util.List;
 
+import edu.uniuv.grupo2.tourgemeas.entities.EventPrize;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

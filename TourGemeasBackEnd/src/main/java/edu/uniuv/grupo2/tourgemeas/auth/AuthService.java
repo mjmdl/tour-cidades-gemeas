@@ -31,14 +31,13 @@ public class AuthService {
 		return new SignUpResult(savedUser.getId());
 	}
 
-	public SignInResult signIn(SignIn signInDto) {
+	public String signIn(SignIn signInDto) {
 		User user = userRepository
 			.findByEmailIgnoreCase(signInDto.getUsername())
 			.orElseThrow(() -> new HttpException(HttpStatus.NOT_FOUND, "USERNAME_NOT_FOUND", "Usuário não encontrado."));
 		if (!passwordEncoder.matches(signInDto.getPassword(), user.getPassword())) {
 			throw new HttpException(HttpStatus.UNAUTHORIZED, "INVALID_CREDENTIALS", "Usuário e senha estão incorretos.");
 		}
-		String token = jwtService.sign(new HashMap<>(), user);
-		return new SignInResult(token);
+		return jwtService.sign(new HashMap<>(), user);
 	}
 }

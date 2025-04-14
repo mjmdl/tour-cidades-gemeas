@@ -34,9 +34,9 @@ public class AuthController {
 	}
 
 	@PostMapping(path = SIGN_IN_PATH)
-	public ResponseEntity<SignInResult> signIn(@RequestBody @Valid SignIn signInDto) {
-		SignInResult result = authService.signIn(signInDto);
-		ResponseCookie cookie = ResponseCookie.from(ACCESS_TOKEN_COOKIE, result.getToken())
+	public ResponseEntity<String> signIn(@RequestBody @Valid SignIn signInDto) {
+		String token = authService.signIn(signInDto);
+		ResponseCookie cookie = ResponseCookie.from(ACCESS_TOKEN_COOKIE, token)
 			.httpOnly(true)
 			.secure(true)
 			.path("/")
@@ -46,7 +46,7 @@ public class AuthController {
 		return ResponseEntity
 			.ok()
 			.header(HttpHeaders.SET_COOKIE, cookie.toString())
-			.body(result);
+			.body(token);
 	}
 
 	@PostMapping(path = CHECK_SESSION_PATH)

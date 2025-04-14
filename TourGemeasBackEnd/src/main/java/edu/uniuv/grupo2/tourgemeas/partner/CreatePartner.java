@@ -10,7 +10,7 @@ import jakarta.validation.constraints.PositiveOrZero;
 
 public record CreatePartner(
 	@NotBlank
-	@Length(min = 3, max = 255)
+	@Length(min = NAME_MIN, max = NAME_MAX)
 	String name,
 
 	@NotNull
@@ -30,4 +30,7 @@ public record CreatePartner(
 	@NotNull
 	@PositiveOrZero
 	BigDecimal maximumValue
-) {}
+) {
+	public static final int NAME_MIN = 3;
+	public static final int NAME_MAX = 255;
+}

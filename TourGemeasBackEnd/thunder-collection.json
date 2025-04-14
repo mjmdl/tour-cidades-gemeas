@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "TourGemeas",
-    "dateExported": "2025-04-13T20:04:08.124Z",
+    "dateExported": "2025-04-14T00:05:11.793Z",
     "version": "1.1",
     "folders": [
         {
@@ -10,6 +10,20 @@
             "containerId": "",
             "created": "2025-04-13T16:55:52.910Z",
             "sortNum": 10000
+        },
+        {
+            "_id": "3a123265-47c8-4e21-aa0d-083a2c20b061",
+            "name": "Event",
+            "containerId": "",
+            "created": "2025-04-13T20:48:12.421Z",
+            "sortNum": 12500
+        },
+        {
+            "_id": "5b086414-d7b7-4fab-89e0-06b2a6f0891a",
+            "name": "Partner",
+            "containerId": "",
+            "created": "2025-04-13T19:42:10.722Z",
+            "sortNum": 15000
         },
         {
             "_id": "bf69af66-7685-4d7e-84c8-fd55dd07ae23",
@@ -24,13 +38,6 @@
             "containerId": "",
             "created": "2025-04-13T18:04:43.664Z",
             "sortNum": 35000
-        },
-        {
-            "_id": "5b086414-d7b7-4fab-89e0-06b2a6f0891a",
-            "name": "Partner",
-            "containerId": "",
-            "created": "2025-04-13T19:42:10.722Z",
-            "sortNum": 40000
         }
     ],
     "requests": [
@@ -348,6 +355,52 @@
             "tests": []
         },
         {
+            "_id": "45408b48-8436-4c36-9350-27469e877e63",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "3a123265-47c8-4e21-aa0d-083a2c20b061",
+            "name": "/event",
+            "url": "127.0.0.1:8081/event",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-04-13T20:48:29.185Z",
+            "modified": "2025-04-13T21:02:54.149Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Verão 2025\",\n  \"startDate\": \"2025-06-32T00:00:00-03:00\",\n  \"endDate\": \"2025-12-31T00:00:00-03:00\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTc3NDU4LCJleHAiOjE3NDUxODIyNTh9.9yQXTlNM_Gavs9ZEptcRN7UquBPOx_ipBsAWEHYj77c"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6c5596a6-5861-4c6c-9f5a-860d2d3357c6",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "3a123265-47c8-4e21-aa0d-083a2c20b061",
+            "name": "/event/id={eventId}",
+            "url": "127.0.0.1:8081/event/id=2",
+            "method": "PATCH",
+            "sortNum": 55000,
+            "created": "2025-04-13T23:50:00.926Z",
+            "modified": "2025-04-14T00:04:56.758Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Primavera 2026\",\n  \"startDate\": \"2026-06-32T00:00:00-03:00\",\n  \"endDate\": \"2026-12-31T00:00:00-03:00\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTc3NDU4LCJleHAiOjE3NDUxODIyNTh9.9yQXTlNM_Gavs9ZEptcRN7UquBPOx_ipBsAWEHYj77c"
+            },
+            "tests": []
+        },
+        {
             "_id": "70fb7a82-ca17-484d-8768-3f3a8983a694",
             "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
             "containerId": "5b086414-d7b7-4fab-89e0-06b2a6f0891a",
@@ -366,6 +419,24 @@
             "tests": []
         },
         {
+            "_id": "86fd0ac1-2018-4577-baa8-a52c8cb3415a",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "3a123265-47c8-4e21-aa0d-083a2c20b061",
+            "name": "/event/id={eventId}",
+            "url": "127.0.0.1:8081/event/id=1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-04-13T23:41:23.604Z",
+            "modified": "2025-04-13T23:49:57.563Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTc3NDU4LCJleHAiOjE3NDUxODIyNTh9.9yQXTlNM_Gavs9ZEptcRN7UquBPOx_ipBsAWEHYj77c"
+            },
+            "tests": []
+        },
+        {
             "_id": "0997f594-27e7-4654-bfbe-0962a6211f13",
             "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
             "containerId": "5b086414-d7b7-4fab-89e0-06b2a6f0891a",
@@ -380,6 +451,42 @@
             "auth": {
                 "type": "bearer",
                 "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTU2NDAzLCJleHAiOjE3NDUxNjEyMDN9.9Ru-FtGqC2nLgDAuMlEZ-Jiygc3qSALk9QO_cgVRyjg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fde8884b-36d4-4559-b1d0-4a0c05e0cfd5",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "3a123265-47c8-4e21-aa0d-083a2c20b061",
+            "name": "/event",
+            "url": "127.0.0.1:8081/event",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2025-04-13T23:41:54.671Z",
+            "modified": "2025-04-13T23:42:07.404Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTc3NDU4LCJleHAiOjE3NDUxODIyNTh9.9yQXTlNM_Gavs9ZEptcRN7UquBPOx_ipBsAWEHYj77c"
+            },
+            "tests": []
+        },
+        {
+            "_id": "04333cc0-a7b6-4e03-acd5-7ecf8d3b4486",
+            "colId": "690b2e1c-6c6c-4330-b720-55d3c201d669",
+            "containerId": "3a123265-47c8-4e21-aa0d-083a2c20b061",
+            "name": "/event/id={eventId}",
+            "url": "127.0.0.1:8081/event/id=2",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2025-04-13T23:48:55.233Z",
+            "modified": "2025-04-13T23:49:40.188Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoZXVzQG1haWwuY29tIiwiaWF0IjoxNzQ0NTc3NDU4LCJleHAiOjE3NDUxODIyNTh9.9yQXTlNM_Gavs9ZEptcRN7UquBPOx_ipBsAWEHYj77c"
             },
             "tests": []
         }
