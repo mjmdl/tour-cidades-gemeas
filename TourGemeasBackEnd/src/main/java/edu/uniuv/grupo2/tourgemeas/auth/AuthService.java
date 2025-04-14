@@ -26,7 +26,7 @@ public class AuthService {
 		user.setName(signUpDto.getName());
 		user.setEmail(signUpDto.getEmail().toLowerCase());
 		user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
-		user.setAdmin(false);
+		user.setAdmin(signUpDto.getAdmin() != null ? signUpDto.getAdmin() : false);
 		User savedUser = userRepository.save(user);
 		return new SignUpResult(savedUser.getId());
 	}

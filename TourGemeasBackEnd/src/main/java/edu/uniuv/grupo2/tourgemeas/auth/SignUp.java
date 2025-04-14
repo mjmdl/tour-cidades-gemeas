@@ -20,4 +20,6 @@ public class SignUp {
 	@NotEmpty
 	@Length(min = 8, max = 32)
 	private String password;
+
+	private Boolean admin = false;
 }
