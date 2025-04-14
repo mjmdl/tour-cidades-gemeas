@@ -54,7 +54,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="334dp"
                 android:layout_height="wrap_content"
-                android:text="Usuário"
+                android:text="Email"
                 android:layout_marginBottom="10dp"
                 />
 
@@ -64,7 +64,7 @@
                 android:layout_height="67dp"
                 android:background="@drawable/borda_verde"
                 android:ems="10"
-                android:hint="Nome de usuário"
+                android:hint="Email"
                 android:inputType="text"
                 android:padding="10dp"
                 android:layout_marginBottom="10dp"
