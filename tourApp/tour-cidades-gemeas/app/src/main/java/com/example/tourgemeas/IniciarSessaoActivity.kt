@@ -1,6 +1,7 @@
 package com.example.tourgemeas
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -21,14 +22,15 @@ class IniciarSessaoActivity : AppCompatActivity() {
 
     private lateinit var telaInciarSessaoAct: ActivityIniciarSessaoBinding
     private val TAG = "IniciarSessaoActivity"
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         telaInciarSessaoAct = ActivityIniciarSessaoBinding.inflate(layoutInflater)
+        sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
 
         enableEdgeToEdge()
-
         setContentView(telaInciarSessaoAct.root)
 
         telaInciarSessaoAct.btnIniciarSessao.setOnClickListener {
@@ -40,6 +42,7 @@ class IniciarSessaoActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Login via API
             fazerLogin(username, senha)
         }
     }
@@ -57,8 +60,23 @@ class IniciarSessaoActivity : AppCompatActivity() {
                         Log.d(TAG, "Resposta do login: $loginResponse")
                         
                         if (loginResponse != null) {
-                            Toast.makeText(this@IniciarSessaoActivity, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@IniciarSessaoActivity, TelaPrincipalActivity::class.java)
+                            // Salvar informações do usuário
+                            sharedPreferences.edit().apply {
+                                putString("token", loginResponse.token)
+                                putBoolean("Admin", loginResponse.admin)
+                                apply()
+                            }
+
+                            Log.d(TAG, "Login bem-sucedido. Admin: ${loginResponse.admin}")
+                            
+                            // Redirecionar para a tela apropriada
+                            val intent = if (loginResponse.admin) {
+                                Log.d(TAG, "Redirecionando para TelaAdminActivity")
+                                Intent(this@IniciarSessaoActivity, TelaAdminActivity::class.java)
+                            } else {
+                                Log.d(TAG, "Redirecionando para TelaPrincipalActivity")
+                                Intent(this@IniciarSessaoActivity, TelaPrincipalActivity::class.java)
+                            }
                             startActivity(intent)
                             finish()
                         } else {
@@ -66,14 +84,17 @@ class IniciarSessaoActivity : AppCompatActivity() {
                         }
                     } else {
                         val errorBody = response.errorBody()?.string()
+                        Log.e(TAG, "Erro na resposta: $errorBody")
                         Toast.makeText(this@IniciarSessaoActivity, "Erro na resposta: $errorBody", Toast.LENGTH_LONG).show()
                     }
                 }
             } catch (e: HttpException) {
+                Log.e(TAG, "Erro HTTP: ${e.code()}")
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@IniciarSessaoActivity, "Erro HTTP: ${e.code()}", Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception) {
+                Log.e(TAG, "Erro: ${e.message}")
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@IniciarSessaoActivity, "Erro: ${e.message}", Toast.LENGTH_LONG).show()
                 }

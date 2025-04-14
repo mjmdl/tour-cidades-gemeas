@@ -39,6 +39,6 @@ public class AuthService {
 			throw new HttpException(HttpStatus.UNAUTHORIZED, "INVALID_CREDENTIALS", "Usuário e senha estão incorretos.");
 		}
 		String token = jwtService.sign(new HashMap<>(), user);
-		return new SignInResult(token);
+		return new SignInResult(token, user.getAdmin());
 	}
 }

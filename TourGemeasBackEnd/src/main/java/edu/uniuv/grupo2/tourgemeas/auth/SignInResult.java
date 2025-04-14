@@ -7,4 +7,5 @@ import lombok.Getter;
 @Getter
 public class SignInResult {
 	private String token;
+	private Boolean admin;
 }

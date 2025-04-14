@@ -1,5 +1,6 @@
 package com.example.tourgemeas.api
 
+import android.util.Log
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -14,10 +15,11 @@ object ApiClient {
     }
 
     private val okHttpClient = OkHttpClient.Builder()
-        .connectTimeout(180, TimeUnit.SECONDS)
-        .readTimeout(180, TimeUnit.SECONDS)
-        .writeTimeout(180, TimeUnit.SECONDS)
+        .connectTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(30, TimeUnit.SECONDS)
+        .writeTimeout(30, TimeUnit.SECONDS)
         .addInterceptor(loggingInterceptor)
+
         .build()
 
     private val retrofit = Retrofit.Builder()
