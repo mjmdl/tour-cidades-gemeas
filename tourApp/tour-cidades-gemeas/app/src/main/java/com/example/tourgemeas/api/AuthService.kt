@@ -7,13 +7,13 @@ import retrofit2.http.POST
 data class RegisterRequest(
     val name: String,
     val email: String,
-    val password: String
+    val password: String,
     val admin: Boolean = false
 )
 
 data class RegisterResponse(
     val message: String,
-    val token: String?
+    val token: String?,
     val id: Long
 )
 
