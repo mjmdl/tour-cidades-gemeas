@@ -97,6 +97,8 @@ class CriarContaActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (response.isSuccessful) {
                             Toast.makeText(this@CriarContaActivity, "Conta criada com sucesso!", Toast.LENGTH_SHORT).show()
+                            val intent = android.content.Intent(this@CriarContaActivity, CuidadoActivity::class.java)
+                            startActivity(intent)
                             finish()
                         } else {
                             val errorMessage = response.errorBody()?.string() ?: response.message()

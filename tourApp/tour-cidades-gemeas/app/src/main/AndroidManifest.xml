@@ -36,6 +36,8 @@
         <activity android:name=".CriarContaActivity" />
         <activity android:name=".PerfilActivity" />
         <activity  android:name=".TelaAdminActivity" />
+        <activity android:name=".CuidadoActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
